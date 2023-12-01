@@ -1,0 +1,215 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+
+ body {
+  // background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .main-body {
+  margin-top: 100px;
+  width: 70%;
+ }
+
+ header {
+  top: 0px;
+  width: 100%;
+  position: fixed;
+ }
+
+ h1 {
+  text-align: center;
+ }
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+form {
+  text-align: center;
+}
+
+input[type=text], input[type=password] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius:7px;
+}
+
+textarea {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius:7px;
+  min-height: 150px;
+}
+
+input[type=submit], button {
+  border-radius:7px;
+  margin: 8px 0;
+  min-width: 100px;
+}
+
+.navbar {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.logged-user {
+  display: flex;
+}
+
+.logged-user h2 {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.button_to {
+  text-align: unset;
+}
+
+.last-col {
+  text-align: right;
+}
+
+.button-line {
+  display: flex;
+}
+
+.button-line form {
+  margin-right: 10px;
+}
+
+.text-body {
+  min-height: 300px;
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.attachments {
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-size: unset;
+}
+
+#no-entry {
+  text-align: center;
+}
+
+.filter form {
+  display: block;
+  text-align: justify;
+  margin-left: 15px;
+}
+
+input#start_date, input#end_date {
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.login-form {
+  margin: 50px;
+}
+
+.notice {
+  text-align: center;
+  color: red;
+}
+
+.login-box {
+  width: 320px;
+  height: 390px;
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.3);
+  margin-top: 50px;
+  border-radius: 7px;
+}
+
+.login-h3 {
+  padding: 20px 10px 0px 20px;
+}
+
+.login-box label, .new-user-box label {
+  float: left;
+  padding-left: 65px;
+}
+
+.new-user {
+  float: right;
+  margin-top: 25px;
+  margin-right: 40px;
+}
+
+.new-user-box {
+  width: 320px;
+  height: 450px;
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.3);
+  margin-top: 50px;
+  border-radius: 7px;
+}
+
+.user-box {
+  margin: auto;
+  width: 30%;
+}
+
+.link-path {
+  margin-top: 25px;
+  float: left;
+}
+
+.filter {
+  height: 80px;
+  border: 1px solid #4b4a4a;
+  margin-top: 50px;
+  border-radius: 7px;
+  padding: 16px 15px 0 15px;
+}
+
+.welcome {
+  display: block;
+  align-self: end;
+  margin-right: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.add-attachments {
+  border: 1px solid #4b4a4a;
+  border-radius:7px;
+  padding: 5px;
+}

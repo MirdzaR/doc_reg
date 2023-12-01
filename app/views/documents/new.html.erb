@@ -1,2 +1,5 @@
-<h1>Documents#new</h1>
-<p>Find me in app/views/documents/new.html.erb</p>
+<h1>Jauns dokuments</h1>
+
+<%= render '/documents/form' %>
+
+<%= button_to "Atpakaļ", documents_path, method: :get %>

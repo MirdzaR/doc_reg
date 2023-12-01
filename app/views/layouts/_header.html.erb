@@ -1,0 +1,11 @@
+<header>
+  <nav class="navbar">
+    <% if current_user.present? %>
+      <%= link_to "Dokumentu reģistrs", documents_path %>
+      <div class='logged-user'>
+        <%= content_tag :h3, current_user.welcome, class: 'welcome' %>
+        <%= button_to "Iziet", session_path(current_user.id), method: :delete %>
+      <div>
+    <% end %>
+  </nav>
+</header>

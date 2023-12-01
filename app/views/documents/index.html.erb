@@ -1,2 +1,35 @@
-<h1>Documents#index</h1>
-<p>Find me in app/views/documents/index.html.erb</p>
+<h1>Dokumenti</h1>
+
+<div class='filter'>
+  <%= form_tag documents_path, method: :get do %>
+    <%= label_tag :start_date, 'Sākuma datums'%>
+    <%= date_field_tag :start_date, params[:start_date] %>
+    <%= label_tag :end_date, 'Beigu datums'%>
+    <%= date_field_tag :end_date, params[:end_date] %>
+    <%= submit_tag 'Atlasīt', name: nil %>
+  <% end %>
+</div><br>
+
+<%= button_to "Jauns dokuments", new_document_path, method: :get %><br>
+
+<table class="table">
+  <tr>
+    <th>Dokumenta nosaukums</th>
+    <th>Apraksts</th>
+    <th class="last-col">Izveides datums</th>
+  </tr>
+
+  <% if @documents.present? %>
+    <% @documents.each do |document| %>
+      <tr>
+        <td class="col-3"> <%= link_to document.title, document %> </td>
+        <td> <%= truncate(document.body, length: 20) %> </td>
+        <td class="col-3 last-col"> <%= document.created_at.strftime('%d.%m.%Y') %> </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td id='no-entry' colspan="3">Nav atrasts neviens dokuments</td>
+    </tr>
+  <% end %>
+</table>

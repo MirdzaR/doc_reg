@@ -1,0 +1,38 @@
+<%= form_for @document do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div>
+    <%= f.label 'Nosaukums' %><br>
+    <%= f.text_field :title %>
+    <% @document.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label 'Teksts' %><br>
+    <%= f.text_area :body %>
+    <% @document.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :attachments, action_name == 'new' ? "Pievienot failus" : "Pievienotie faili" %> <br>
+    <% if @document.attachments.attached?%>
+      <div class='attached-documents'>
+        <% @document.attachments.each do |attachment| %>
+            <%= f.hidden_field :attachments, multiple: :true, value: attachment.signed_id %>
+            <%= attachment.blob.filename %>
+            <%= link_to 'Dzēst', remove_attachment_document_path(attachment), data: { turbo_method: :delete, turbo_confirm: "Vai tiešām dzēst pievienoto failu?" } %>
+        <% end %>
+      </div>
+    <% end %><br>
+    <%= f.file_field :attachments, multiple: true, id: 'document_attachments', class:'hidden' %>
+    <%= f.label 'attachments', 'Izvēlēties failus', class:'add-attachments' %>
+
+  </div><br>
+
+  <div>
+    <%= f.submit 'Saglabāt' %>
+  </div>
+<% end %>

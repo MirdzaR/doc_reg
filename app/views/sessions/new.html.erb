@@ -1,0 +1,19 @@
+<h1> Dokumentu reģistrs </h1>
+
+<div class='user-box'>
+  <div class='login-box'>
+    <h3 class='login-h3'> Pierakstīties: </h3><br>
+    <%= form_with url: sessions_path do |f| %>
+      <%= f.label 'Lietotājvārds' %><br>
+      <%= f.text_field :username %><br>
+      <%= f.label 'Parole' %><br>
+      <%= f.password_field :password %><br><br>
+      <%= f.submit "Ienākt" %>
+      <% if flash[:notice] %>
+        <%= content_tag :p, flash[:notice], class: 'notice' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= link_to "Jauns lietotājs", new_user_path, class: 'link-path' %>
+</div>

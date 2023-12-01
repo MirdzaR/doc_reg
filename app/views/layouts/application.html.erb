@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DocReg</title>
+    <title>Dokumentu Reģistrs</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render '/layouts/header' %>
+    <div class='main-body'>
+      <%= yield %>
+    </div>
   </body>
 </html>

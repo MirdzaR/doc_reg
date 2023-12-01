@@ -1,2 +1,33 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<h1>Jauns lietotājs</h1>
+
+<div class='user-box'>
+  <div class='new-user-box'>
+    <h3 class='login-h3'>Jauns lietotājs:</h3><br>
+    <%= form_for @user do |f| %>
+      <div>
+        <%= f.label 'Lietotājvārds', class: 'required' %><br>
+        <%= f.text_field :username %>
+      </div>
+
+      <div>
+        <%= f.label 'Parole', class: 'required' %><br>
+        <%= f.password_field :password %>
+      </div>
+
+      <div>
+        <%= f.label 'Parole atkārtoti', class: 'required' %><br>
+        <%= f.password_field :password_confirmation %>
+      </div>
+
+      <div>
+        <%= f.submit 'Saglabāt' %>
+      </div>
+
+      <% if flash[:error] %>
+        <%= content_tag :p, flash[:error], class: 'notice' %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to 'Sākums', root_path, class: 'link-path' %>
+</div>

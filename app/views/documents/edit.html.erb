@@ -1,2 +1,5 @@
-<h1>Documents#edit</h1>
-<p>Find me in app/views/documents/edit.html.erb</p>
+<h2> Dokumenta labošana </h2>
+
+<%= render '/documents/form' %>
+
+<%= button_to "Atpakaļ", document_path, method: :get %>

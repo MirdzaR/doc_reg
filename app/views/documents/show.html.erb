@@ -1,0 +1,24 @@
+<h1><%= @document.title %></h1>
+<p class='text-body'><%= @document.body %></p>
+
+<hr>
+<h3>Pievienotie faili:</h3>
+<div class="attachments">
+  <ul>
+    <% if @document.attachments.attached? %>
+      <% @document.attachments.each do |attachment| %>
+        <%= link_to rails_blob_path(attachment, disposition: "attachment") do %>
+          <%= content_tag(:p, attachment.blob.filename) %>
+        <% end %>
+      <%end%>
+    <%else%>
+      <p> Nav pievienots neviens dokuments </p>
+    <%end%>
+  </ul>
+</div>
+
+<div class='button-line'>
+  <%= button_to "Labot", edit_document_path, method: :get %>
+  <%= button_to "Dzēst", document_path, method: :delete, data: { turbo_confirm: "Vai tiešām dzēst dokumentu?" } %>
+  <%= button_to "Atpakaļ", documents_path, method: :get %>
+</div>
