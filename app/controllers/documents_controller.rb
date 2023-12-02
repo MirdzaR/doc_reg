@@ -44,16 +44,20 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document = Document.find(params[:id])
+    # Find all documents attachments
     @attachments = ActiveStorage::Attachment.where(record_id: params[:id])
+    # Destroy each attachment sepereately
     @attachments.each do |attachment|
       @attachment = ActiveStorage::Attachment.find(attachment.id)
       @attachment.purge_later
     end
+    # Destroy document itself
     @document.destroy
 
     redirect_to documents_path
   end
 
+  # Delete attachment in edit view
   def remove_attachment
     @attachment = ActiveStorage::Attachment.find(params[:id])
     @attachment.purge_later

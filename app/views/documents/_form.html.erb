@@ -21,15 +21,14 @@
     <% if @document.attachments.attached?%>
       <div class='attached-documents'>
         <% @document.attachments.each do |attachment| %>
-            <%= f.hidden_field :attachments, multiple: :true, value: attachment.signed_id %>
-            <%= attachment.blob.filename %>
-            <%= link_to 'Dzēst', remove_attachment_document_path(attachment), data: { turbo_method: :delete, turbo_confirm: "Vai tiešām dzēst pievienoto failu?" } %>
+          <%= f.hidden_field :attachments, multiple: :true, value: attachment.signed_id %>
+          <%= attachment.blob.filename %>
+          <%= link_to 'Dzēst', remove_attachment_document_path(attachment), data: { turbo_method: :delete, turbo_confirm: "Vai tiešām dzēst pievienoto failu?" } %>
+          <br>
         <% end %>
       </div>
     <% end %><br>
-    <%= f.file_field :attachments, multiple: true, id: 'document_attachments', class:'hidden' %>
-    <%= f.label 'attachments', 'Izvēlēties failus', class:'add-attachments' %>
-
+    <%= f.file_field :attachments, multiple: true %>
   </div><br>
 
   <div>

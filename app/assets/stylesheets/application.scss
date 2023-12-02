@@ -16,27 +16,24 @@
 
  @import "bootstrap";
 
- body {
-  // background-color: pink;
+body {
   display: flex;
   align-items: center;
   justify-content: center;
- }
+}
 
- .main-body {
+.main-body {
   margin-top: 100px;
   width: 70%;
- }
+}
 
- header {
+header {
   top: 0px;
   width: 100%;
   position: fixed;
- }
+}
 
- h1 {
-  text-align: center;
- }
+h1 { text-align: center; }
 
 th, td {
   text-align: left;
@@ -45,9 +42,7 @@ th, td {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 
-form {
-  text-align: center;
-}
+form { text-align: center; }
 
 input[type=text], input[type=password] {
   width: 60%;
@@ -77,13 +72,9 @@ input[type=submit], button {
   margin-right: 20px;
 }
 
-.logged-user {
-  display: flex;
-}
+.logged-user { display: flex; }
 
-.logged-user h2 {
-  margin-right: 20px;
-}
+.logged-user h2 { margin-right: 20px; }
 
 a {
   text-decoration: none;
@@ -95,21 +86,13 @@ a:hover {
   color: darkblue;
 }
 
-.button_to {
-  text-align: unset;
-}
+.button_to { text-align: unset; }
 
-.last-col {
-  text-align: right;
-}
+.last-col { text-align: right; }
 
-.button-line {
-  display: flex;
-}
+.button-line { display: flex; }
 
-.button-line form {
-  margin-right: 10px;
-}
+.button-line form { margin-right: 10px; }
 
 .text-body {
   min-height: 300px;
@@ -117,17 +100,11 @@ a:hover {
   text-align: justify;
 }
 
-.attachments {
-  margin-bottom: 50px;
-}
+.attachments { margin-bottom: 50px; }
 
-h3 {
-  font-size: unset;
-}
+h3 { font-size: unset; }
 
-#no-entry {
-  text-align: center;
-}
+#no-entry { text-align: center; }
 
 .filter form {
   display: block;
@@ -140,9 +117,7 @@ input#start_date, input#end_date {
   margin-left: 5px;
 }
 
-.login-form {
-  margin: 50px;
-}
+.login-form { margin: 50px; }
 
 .notice {
   text-align: center;
@@ -157,9 +132,7 @@ input#start_date, input#end_date {
   border-radius: 7px;
 }
 
-.login-h3 {
-  padding: 20px 10px 0px 20px;
-}
+.login-h3 { padding: 20px 10px 0px 20px; }
 
 .login-box label, .new-user-box label {
   float: left;
@@ -202,14 +175,4 @@ input#start_date, input#end_date {
   display: block;
   align-self: end;
   margin-right: 50px;
-}
-
-.hidden {
-  display: none;
-}
-
-.add-attachments {
-  border: 1px solid #4b4a4a;
-  border-radius:7px;
-  padding: 5px;
 }

@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:create, :new]
   skip_before_action :users_documents
 
-
   def new
   end
 
